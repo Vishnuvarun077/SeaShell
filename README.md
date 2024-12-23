@@ -14,12 +14,12 @@ make clean
 ___
 ___
 # Contents
-* ### [The Unique Factor](https://github.com/Vishnuvarun077/SeaShell/SeaShell#the-unique-factor-1)
-* ### [Features](https://github.com/Vishnuvarun077/SeaShell/SeaShell#features-1)
-#### [exit](https://github.com/Vishnuvarun077/SeaShell/SeaShell#exit) | [neonate](https://github.com/Vishnuvarun077/SeaShell/SeaShell#signals) | [signals](https://github.com/Vishnuvarun077/SeaShell/SeaShell#signals) |  [fg and bg](https://github.com/Vishnuvarun077/SeaShell/SeaShell#fg-and-bg) | [iMan](https://github.com/Vishnuvarun077/SeaShell/SeaShell#iman) | [Multi-Command Structures](https://github.com/Vishnuvarun077/SeaShell/SeaShell#multi-command-structures) | [I/O Redirection](https://github.com/Vishnuvarun077/SeaShell/SeaShell#io-redirection) | [Piping](https://github.com/Vishnuvarun077/SeaShell/SeaShell#piping) | [activities](https://github.com/Vishnuvarun077/SeaShell/SeaShell#activities) |[warp](https://github.com/Vishnuvarun077/SeaShell/SeaShell#warp) | [peek](https://github.com/Vishnuvarun077/SeaShell/SeaShell#peek) | [pastevents](https://github.com/Vishnuvarun077/SeaShell/SeaShell#pastevents) | [System Commands](https://github.com/Vishnuvarun077/SeaShell/SeaShell#system-commands) | [proclore](https://github.com/Vishnuvarun077/SeaShell/SeaShell#proclore) | [seek](https://github.com/Vishnuvarun077/SeaShell/SeaShell#seek)
-* ### [Improvements on Requirements](https://github.com/Vishnuvarun077/SeaShell/SeaShell#improvements-on-requirements-1)
-* ### [Assumptions](https://github.com/Vishnuvarun077/SeaShell/SeaShell#assumptions-1)
-* ### [Limitations](https://github.com/Vishnuvarun077/SeaShell/SeaShell#limitations-1)
+* ### [The Unique Factor](https://github.com/Vishnuvarun077/SeaShell#the-unique-factor-1)
+* ### [Features](https://github.com/Vishnuvarun077/SeaShell#features-1)
+#### [exit](https://github.com/Vishnuvarun077/SeaShell#exit) | [neonate](https://github.com/Vishnuvarun077/SeaShell#signals) | [signals](https://github.com/Vishnuvarun077/SeaShell#signals) |  [fg and bg](https://github.com/Vishnuvarun077/SeaShell#fg-and-bg) | [iMan](https://github.com/Vishnuvarun077/SeaShell#iman) | [Multi-Command Structures](https://github.com/Vishnuvarun077/SeaShell#multi-command-structures) | [I/O Redirection](https://github.com/Vishnuvarun077/SeaShell#io-redirection) | [Piping](https://github.com/Vishnuvarun077/SeaShell#piping) | [activities](https://github.com/Vishnuvarun077/SeaShell#activities) |[warp](https://github.com/Vishnuvarun077/SeaShell#warp) | [peek](https://github.com/Vishnuvarun077/SeaShell#peek) | [pastevents](https://github.com/Vishnuvarun077/SeaShell#pastevents) | [System Commands](https://github.com/Vishnuvarun077/SeaShell#system-commands) | [proclore](https://github.com/Vishnuvarun077/SeaShell#proclore) | [seek](https://github.com/Vishnuvarun077/SeaShell#seek)
+* ### [Improvements on Requirements](https://github.com/Vishnuvarun077/SeaShell#improvements-on-requirements-1)
+* ### [Assumptions](https://github.com/Vishnuvarun077/SeaShell#assumptions-1)
+* ### [Limitations](https://github.com/Vishnuvarun077/SeaShell#limitations-1)
 ___
 ___
 # The Unique Factor
@@ -32,7 +32,7 @@ ___
     So: `echo   "hello" >   a.txt` and `echo>a.txt hello` are stored as one and the same in pastevents. 
 Both of the above points were an attempt to solve a question in the doubts document, which we were told not to solve due to the implementational burden. But, I thought it would improve my shell so I went ahead and did it. 
 
-Read more improvements on requirements [here](https://github.com/Vishnuvarun077/SeaShell/SeaShell#improvements-on-requirements-1). 
+Read more improvements on requirements [here](https://github.com/Vishnuvarun077/SeaShell#improvements-on-requirements-1). 
 ___
 ___
 # Features
@@ -234,7 +234,7 @@ ___
 - Complex string input with double quotes is allowed and accounted for, similar to bash. 
     - `echo "random word > a.txt"` is valid and echoes `random word > a.txt` without any redirection, as is `echo "random word" | wc | echo "random word | wc"`, and it will give the same output as bash. 
     - Even regular system commands work similar to bash. echo random"word" prints randomword, same as bash. 
-    - Please read [this](https://github.com/Vishnuvarun077/SeaShell/SeaShell#the-unique-factor-1)
+    - Please read [this](https://github.com/Vishnuvarun077SeaShell#the-unique-factor-1)
 - pastevents stores a uniformly formatted equivalent version of the passed command. This allows for various improvements. For example `sleep    "5"` is treated equivalent to `sleep 5`. 
 - warp and seek change the working directory even in the middle of commands. Consequently, commands like `seek -e -d newfolder ./doe ; peek -al ;` would peek the new directory entered by seek, if any. 
 - Large multi-command calls can be executed by `pastevents execute <index>`. This acts as a standalone function, meaning redirects lead to the output of all the commands in this call being redirected, and same for input. 
