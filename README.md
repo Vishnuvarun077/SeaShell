@@ -12,6 +12,8 @@ make
 make clean
 ```
 ___
+![Mermaid Chart](Architecture.svg)
+
 ___
 # Contents
 * ### [The Unique Factor](https://github.com/Vishnuvarun077/SeaShell#the-unique-factor-1)
